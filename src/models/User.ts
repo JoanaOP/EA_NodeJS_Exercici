@@ -5,6 +5,9 @@ const UserSchema = new Schema({
     name: {type: String, required:true},
     age: {type: String, required:true},
     password: {type: String, required:true},
-    creationDate: {type: Date, default:Date.now}
-})
+    creationDate: {type: Date, default:Date.now},
+    ratings: [{type: Schema.Types.ObjectId, ref:'Rating'}]
+});
+
+
 export default model('User', UserSchema);

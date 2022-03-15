@@ -7,7 +7,7 @@ import cors from 'cors';
 
 import indexRoutes from './routes/indexRoutes';
 import postsRoutes from './routes/usersRoutes';
-import evaluationRoutes from './routes/evaluationRoutes';
+import ratingRoutes from './routes/ratingRoutes';
 
 class Server {
     public app: express.Application;
@@ -40,7 +40,7 @@ class Server {
     routes() {
         this.app.use(indexRoutes);
         this.app.use('/api/users', postsRoutes);
-        this.app.use('/api/evaluations',evaluationRoutes);
+        this.app.use('/api/ratings',ratingRoutes);
 
     }
 
