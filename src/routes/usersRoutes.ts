@@ -20,7 +20,7 @@ class UserRoutes {
     }
 
     public async getUserByName(req: Request, res: Response) : Promise<void> {
-        const userFound = await User.findOne({name: req.params.nameUser});
+        const userFound = await User.findOne({name: req.params.nameUser}).populate('ratings');
         if(userFound == null){
             res.status(404).send("The user doesn't exist!");
         }
